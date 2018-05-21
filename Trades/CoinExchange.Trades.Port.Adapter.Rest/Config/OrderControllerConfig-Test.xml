@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/spring-objects.xsd">
+
+  <object id="OrderController" type="CoinExchange.Trades.Port.Adapter.Rest.Resources.OrderController, CoinExchange.Trades.Port.Adapter.Rest" singleton="false">
+    <constructor-arg name="orderApplicationService" ref="OrderApplicationService"/>
+    <constructor-arg name="orderQueryService" ref="OrderQueryService"/>
+  </object>
+
+  <object id="OrderApplicationService" type="CoinExchange.Trades.Application.OrderServices.StubbedOrderApplicationService, CoinExchange.Trades.Application"/>
+  <object id="OrderQueryService" type="CoinExchange.Trades.Application.OrderServices.StubbedOrderQueryService, CoinExchange.Trades.Application"/>
+
+</objects>

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+         xmlns:db="http://www.springframework.net/database"
+         xmlns:tx="http://www.springframework.net/tx">
+
+  <!-- Database Configuration -->
+  <db:provider id="DbProvider"
+                   provider="MySql-6.2.2"
+                   connectionString="Server=localhost;Database=CoinExchangeDev;User ID=root;Password=123456;"/>
+
+  <!-- NHibernate SessionFactory configuration -->
+  <object id="NHibernateSessionFactory" type="Spring.Data.NHibernate.LocalSessionFactoryObject, Spring.Data.NHibernate30">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="MappingAssemblies">
+      <list>
+        <value>CoinExchange.IdentityAccess.Infrastructure.Persistence</value>
+        <value>CoinExchange.Trades.ReadModel.Persistence</value>
+        <value>CoinExchange.Funds.Infrastructure.Persistence.NHibernate</value>
+      </list>
+    </property>
+    
+    <property name="HibernateProperties">
+      <dictionary>
+        <entry key="hibernate.connection.provider" value="NHibernate.Connection.DriverConnectionProvider"/>
+        <entry key="dialect" value="NHibernate.Dialect.MySQL5Dialect"/>
+        <entry key="connection.driver_class" value="NHibernate.Driver.MySqlDataDriver"/>
+        <entry key="show_sql" value="true"/>
+      </dictionary>
+    </property>
+
+    <!-- provides integation with Spring's declarative transaction management features -->
+    <property name="ExposeTransactionAwareSessionFactory" value="true" />
+
+  </object>
+
+  <!-- Transaction Management Strategy - local database transactions -->
+  <object id="transactionManager"
+        type="Spring.Data.NHibernate.HibernateTransactionManager, Spring.Data.NHibernate30">
+    <property name="DbProvider" ref="DbProvider"/>
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <!-- Exception translation object post processor -->
+  <!--<object type="Spring.Dao.Attributes.PersistenceExceptionTranslationPostProcessor, Spring.Data"/>-->
+
+  <!-- Identity & Access BC Repositories -->
+  <object id="IdentityAccessPersistenceRepository" type="CoinExchange.IdentityAccess.Infrastructure.Persistence.Repositories.IdentityAccessPersistenceRepository, CoinExchange.IdentityAccess.Infrastructure.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="UserRepository" type="CoinExchange.IdentityAccess.Infrastructure.Persistence.Repositories.UserRepository, CoinExchange.IdentityAccess.Infrastructure.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+  <object id="SecurityKeysPairRepository" type="CoinExchange.IdentityAccess.Infrastructure.Persistence.Repositories.SecurityKeysPairRepository, CoinExchange.IdentityAccess.Infrastructure.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory" />
+  </object>
+  <object id="PermissionRespository" type="CoinExchange.IdentityAccess.Infrastructure.Persistence.Repositories.PermissionRespository, CoinExchange.IdentityAccess.Infrastructure.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+  <object id="TierRepository" type="CoinExchange.IdentityAccess.Infrastructure.Persistence.Repositories.TierRepository, CoinExchange.IdentityAccess.Infrastructure.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+  
+  <!-- Trade BC Repositories -->
+  <object id="PersistenceRepository" type="CoinExchange.Trades.ReadModel.Persistence.NHibernate.PersistenceRepository, CoinExchange.Trades.ReadModel.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="OrderRepository" type="CoinExchange.Trades.ReadModel.Persistence.NHibernate.OrderRepository, CoinExchange.Trades.ReadModel.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="TradeRepository" type="CoinExchange.Trades.ReadModel.Persistence.NHibernate.TradeRepository, CoinExchange.Trades.ReadModel.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+  <object id="OhlcRepository" type="CoinExchange.Trades.ReadModel.Persistence.NHibernate.OhlcRepository, CoinExchange.Trades.ReadModel.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+  <object id="TickerInfoRepository" type="CoinExchange.Trades.ReadModel.Persistence.NHibernate.TickerInfoRepository, CoinExchange.Trades.ReadModel.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+  <object id="CurrencyPairRepository" type="CoinExchange.Trades.ReadModel.Persistence.NHibernate.CurrencyPairRepository, CoinExchange.Trades.ReadModel.Persistence">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <!-- Repositories -->
+  <object id="FundsPersistenceRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.FundsPersistenceRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="BalanceRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.BalanceRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="DepositRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.DepositRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="WithdrawRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.WithdrawRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="LedgerRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.LedgerRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="DepositAddressRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.DepositAddressRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="WithdrawAddressRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.WithdrawAddressRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="WithdrawLimitRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.WithdrawLimitRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="DepositLimitRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.DepositLimitRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="FeeRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.FeeRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+
+  <object id="WithdrawFeesRepository" type="CoinExchange.Funds.Infrastructure.Persistence.NHibernate.NHibernate.WithdrawFeesRepository, CoinExchange.Funds.Infrastructure.Persistence.NHibernate">
+    <property name="SessionFactory" ref="NHibernateSessionFactory"/>
+  </object>
+  <tx:attribute-driven/>
+</objects>

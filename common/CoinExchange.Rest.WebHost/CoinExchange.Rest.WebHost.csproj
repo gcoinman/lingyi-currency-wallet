@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{583A125D-9199-4122-B8BA-FD520068F083}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinExchange.Rest.WebHost</RootNamespace>
+    <AssemblyName>CoinExchange.Rest.WebHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Atomic, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Atomic.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net">
+      <HintPath>..\..\packages\Common.Logging.Log4Net.2.0.1\lib\net20\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Disruptor, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Disruptor.dll</HintPath>
+    </Reference>
+    <Reference Include="Disruptor.Scheduler, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Disruptor.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Iesi.Collections.1.0.1\lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="NEventStore">
+      <HintPath>..\..\packages\NEventStore.4.0.0.15\lib\net40\NEventStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Spring.Core.1.3.2\lib\net40\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate30">
+      <HintPath>..\..\packages\Spring.Data.NHibernate30.1.3.2\lib\net40\Spring.Data.NHibernate30.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core">
+      <HintPath>..\..\packages\Swashbuckle.Core.4.1.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.1\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\..\packages\WebActivatorEx.2.0.5\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <EmbeddedResource Include="SpringDbConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AuthenticationHandler.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpringDependencyResolver.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Bilal.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Application\CoinExchange.Funds.Application.csproj">
+      <Project>{f6edd751-080b-4c4e-8216-2e1ed3ed0a66}</Project>
+      <Name>CoinExchange.Funds.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Domain.Model\CoinExchange.Funds.Domain.Model.csproj">
+      <Project>{4c4f167d-3339-45f1-9a85-71159ef0d806}</Project>
+      <Name>CoinExchange.Funds.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Infrastructure.Persistence.NHibernate\CoinExchange.Funds.Infrastructure.Persistence.NHibernate.csproj">
+      <Project>{4cba757a-c25f-49bf-bd1d-693a98a7c175}</Project>
+      <Name>CoinExchange.Funds.Infrastructure.Persistence.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Infrastructure.Services\CoinExchange.Funds.Infrastructure.Services.csproj">
+      <Project>{27301eba-3e81-4091-b877-da0be0bae158}</Project>
+      <Name>CoinExchange.Funds.Infrastructure.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Port.Adapter.Rest\CoinExchange.Funds.Port.Adapter.Rest.csproj">
+      <Project>{d234ea72-f051-461c-b417-1d45e8674881}</Project>
+      <Name>CoinExchange.Funds.Port.Adapter.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Application\CoinExchange.IdentityAccess.Application.csproj">
+      <Project>{523daca3-bec6-45e9-90d4-8f6f8a1266d7}</Project>
+      <Name>CoinExchange.IdentityAccess.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Domain.Model\CoinExchange.IdentityAccess.Domain.Model.csproj">
+      <Project>{cb2cca81-c266-49a4-9fa0-40416ec2318e}</Project>
+      <Name>CoinExchange.IdentityAccess.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure.Persistence\CoinExchange.IdentityAccess.Infrastructure.Persistence.csproj">
+      <Project>{41ec439d-9e31-4911-b1a6-e5f0a8c01637}</Project>
+      <Name>CoinExchange.IdentityAccess.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure.Services\CoinExchange.IdentityAccess.Infrastructure.Services.csproj">
+      <Project>{4921a0e0-8197-4d15-932b-06d667bf9275}</Project>
+      <Name>CoinExchange.IdentityAccess.Infrastructure.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure\CoinExchange.IdentityAccess.Infrastructure.csproj">
+      <Project>{d1f70751-534e-461e-999d-42813ac2cae8}</Project>
+      <Name>CoinExchange.IdentityAccess.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Port.Adapter.Rest\CoinExchange.IdentityAccess.Port.Adapter.Rest.csproj">
+      <Project>{54938884-179c-46f9-aba4-2c4ced45b175}</Project>
+      <Name>CoinExchange.IdentityAccess.Port.Adapter.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchance.Trades.ReadModel.Persistence\CoinExchange.Trades.ReadModel.Persistence.csproj">
+      <Project>{9fca647f-ed19-4bef-a2ff-093ae27974e9}</Project>
+      <Name>CoinExchange.Trades.ReadModel.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Application\CoinExchange.Trades.Application.csproj">
+      <Project>{4a084ed0-9f5d-4ce9-bb1e-d39b21ad9bcb}</Project>
+      <Name>CoinExchange.Trades.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Domain.Model\CoinExchange.Trades.Domain.Model.csproj">
+      <Project>{32ac3710-adf8-4522-8f06-1f9c7a45e6e7}</Project>
+      <Name>CoinExchange.Trades.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Infrastructure.Common\CoinExchange.Trades.Infrastructure.Common.csproj">
+      <Project>{549e911d-9534-49e3-af19-19d06b697083}</Project>
+      <Name>CoinExchange.Trades.Infrastructure.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Infrastructure.Persistence\CoinExchange.Trades.Infrastructure.Persistence.csproj">
+      <Project>{1fe04e5f-951e-408f-9172-87b259cbbf94}</Project>
+      <Name>CoinExchange.Trades.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Infrastructure.Services\CoinExchange.Trades.Infrastructure.Services.csproj">
+      <Project>{2247dd67-1747-430f-b93f-c5538a6dda1e}</Project>
+      <Name>CoinExchange.Trades.Infrastructure.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Port.Adapter.Rest\CoinExchange.Trades.Port.Adapter.Rest.csproj">
+      <Project>{58d0962f-9a65-499c-820e-6ef9afa52f61}</Project>
+      <Name>CoinExchange.Trades.Port.Adapter.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Trades\CoinExchange.Trades.ReadModel\CoinExchange.Trades.ReadModel.csproj">
+      <Project>{e31a7aa3-da8b-4e3d-8e3b-684555a8dafc}</Project>
+      <Name>CoinExchange.Trades.ReadModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Common\CoinExchange.Common.csproj">
+      <Project>{d61dbd04-95dc-4eb1-ad54-1ff929ac2814}</Project>
+      <Name>CoinExchange.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51784</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51780/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

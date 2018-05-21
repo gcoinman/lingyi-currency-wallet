@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{288BCB69-1B33-41B5-B1FD-46C03761B514}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinExchange.Trades.Port.Adapter.Rest.IntegrationTests</RootNamespace>
+    <AssemblyName>CoinExchange.Trades.Port.Adapter.Rest.IntegrationTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.1.3.42154, Culture=neutral, PublicKeyToken=3a9cab8f8d22bfb7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Antlr.3.1.3.42154\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Atomic, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Atomic.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net">
+      <HintPath>..\..\packages\Common.Logging.Log4Net.2.0.1\lib\net20\Common.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Disruptor, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Disruptor.dll</HintPath>
+    </Reference>
+    <Reference Include="Disruptor.Scheduler">
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Disruptor.Scheduler.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Iesi.Collections.1.0.1\lib\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NEventStore">
+      <HintPath>..\..\packages\NEventStore.4.0.0.15\lib\net40\NEventStore.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.41.2, Culture=neutral, PublicKeyToken=cab60358ab4081ea, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\NHibernate.3.0.0.4000\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Spring.Aop.1.3.2\lib\net40\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Spring.Core.1.3.2\lib\net40\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data, Version=1.3.2.40943, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Spring.Data.1.3.2\lib\net40\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data.NHibernate30">
+      <HintPath>..\..\packages\Spring.Data.NHibernate30.1.3.2\lib\net40\Spring.Data.NHibernate30.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.1.1\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web.Http, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.1.1\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.1\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="EndToEndTests.cs" />
+    <Compile Include="MarketDataControllerTests.cs" />
+    <Compile Include="OrderbookReplayTests.cs" />
+    <Compile Include="OrderControllerTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StubApiKeyService.cs" />
+    <Compile Include="TradeControllerTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\CoinExchange.Common.Tests\CoinExchange.Common.Tests.csproj">
+      <Project>{bbf58888-03cd-47f4-aeb9-bc6070d97920}</Project>
+      <Name>CoinExchange.Common.Tests</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\CoinExchange.Common\CoinExchange.Common.csproj">
+      <Project>{d61dbd04-95dc-4eb1-ad54-1ff929ac2814}</Project>
+      <Name>CoinExchange.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Application\CoinExchange.Funds.Application.csproj">
+      <Project>{f6edd751-080b-4c4e-8216-2e1ed3ed0a66}</Project>
+      <Name>CoinExchange.Funds.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure.Persistence\CoinExchange.IdentityAccess.Infrastructure.Persistence.csproj">
+      <Project>{41ec439d-9e31-4911-b1a6-e5f0a8c01637}</Project>
+      <Name>CoinExchange.IdentityAccess.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure.Services\CoinExchange.IdentityAccess.Infrastructure.Services.csproj">
+      <Project>{4921a0e0-8197-4d15-932b-06d667bf9275}</Project>
+      <Name>CoinExchange.IdentityAccess.Infrastructure.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchance.Trades.ReadModel.Persistence\CoinExchange.Trades.ReadModel.Persistence.csproj">
+      <Project>{9fca647f-ed19-4bef-a2ff-093ae27974e9}</Project>
+      <Name>CoinExchange.Trades.ReadModel.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Trades.Application\CoinExchange.Trades.Application.csproj">
+      <Project>{4a084ed0-9f5d-4ce9-bb1e-d39b21ad9bcb}</Project>
+      <Name>CoinExchange.Trades.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Trades.Domain.Model\CoinExchange.Trades.Domain.Model.csproj">
+      <Project>{32ac3710-adf8-4522-8f06-1f9c7a45e6e7}</Project>
+      <Name>CoinExchange.Trades.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Trades.Infrastructure.Persistence\CoinExchange.Trades.Infrastructure.Persistence.csproj">
+      <Project>{1fe04e5f-951e-408f-9172-87b259cbbf94}</Project>
+      <Name>CoinExchange.Trades.Infrastructure.Persistence</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Trades.Infrastructure.Services\CoinExchange.Trades.Infrastructure.Services.csproj">
+      <Project>{2247dd67-1747-430f-b93f-c5538a6dda1e}</Project>
+      <Name>CoinExchange.Trades.Infrastructure.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Trades.Port.Adapter.Rest\CoinExchange.Trades.Port.Adapter.Rest.csproj">
+      <Project>{58d0962f-9a65-499c-820e-6ef9afa52f61}</Project>
+      <Name>CoinExchange.Trades.Port.Adapter.Rest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Trades.ReadModel\CoinExchange.Trades.ReadModel.csproj">
+      <Project>{e31a7aa3-da8b-4e3d-8e3b-684555a8dafc}</Project>
+      <Name>CoinExchange.Trades.ReadModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\OrderControllerConfig-Stub.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Config\TradeControllerConfig-Stub.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

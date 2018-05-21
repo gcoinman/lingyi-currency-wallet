@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32AC3710-ADF8-4522-8F06-1F9C7A45E6E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinExchange.Trades.Domain.Model</RootNamespace>
+    <AssemblyName>CoinExchange.Trades.Domain.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atomic">
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Atomic.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=2.1.2.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Common.Logging.2.1.2\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Disruptor">
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Disruptor.dll</HintPath>
+    </Reference>
+    <Reference Include="Disruptor.Scheduler">
+      <HintPath>..\..\packages\Disruptor.1.1.0\lib\net40\Disruptor.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Aop">
+      <HintPath>..\..\packages\Spring.Aop.1.3.2\lib\net40\Spring.Aop.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Core, Version=2.0.0.45000, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Spring.Core.1.3.2\lib\net40\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Data">
+      <HintPath>..\..\packages\Spring.Data.1.3.2\lib\net40\Spring.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web">
+      <HintPath>..\..\packages\Spring.Web.2.0.0-RC1\lib\net45\Spring.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Spring.Web.Mvc4">
+      <HintPath>..\..\packages\Spring.Web.Mvc4.2.0.0-RC1\lib\net45\Spring.Web.Mvc4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CurrencyPairAggregate\CurrencyPair.cs" />
+    <Compile Include="CurrencyPairAggregate\ICurrencyPairRepository.cs" />
+    <Compile Include="OrderMatchingEngine\BBOEvent.cs" />
+    <Compile Include="OrderMatchingEngine\DepthEvent.cs" />
+    <Compile Include="OrderMatchingEngine\ExchangeEssentials.cs" />
+    <Compile Include="OrderMatchingEngine\ExchangeEssentialsSnapshortEvent.cs" />
+    <Compile Include="OrderMatchingEngine\LimitOrderBookEvent.cs" />
+    <Compile Include="OrderAggregate\OrderEvent.cs" />
+    <Compile Include="OrderMatchingEngine\ExchangeEssentialsList.cs" />
+    <Compile Include="OrderMatchingEngine\LimitOrderBookReplayService.cs" />
+    <Compile Include="OrderMatchingEngine\ReplayService.cs" />
+    <Compile Include="Services\IBalanceValidationService.cs" />
+    <Compile Include="TradeAggregate\ITradeIdGenerator.cs" />
+    <Compile Include="TradeAggregate\TradeEvent.cs" />
+    <Compile Include="OrderAggregate\InputDisruptorPublisher.cs" />
+    <Compile Include="OrderAggregate\InputPayload.cs" />
+    <Compile Include="OrderAggregate\OrderCancellation.cs" />
+    <Compile Include="OrderMatchingEngine\BBO.cs" />
+    <Compile Include="OrderMatchingEngine\BBOListener.cs" />
+    <Compile Include="OrderMatchingEngine\ChangeId.cs" />
+    <Compile Include="OrderMatchingEngine\Depth.cs" />
+    <Compile Include="OrderMatchingEngine\DepthLevel.cs" />
+    <Compile Include="OrderMatchingEngine\DepthLevelMap.cs" />
+    <Compile Include="OrderMatchingEngine\DepthListener.cs" />
+    <Compile Include="OrderMatchingEngine\DepthOrderBook.cs" />
+    <Compile Include="OrderMatchingEngine\Exchange.cs" />
+    <Compile Include="OrderMatchingEngine\FillFlags.cs" />
+    <Compile Include="OrderMatchingEngine\IBBOListener.cs" />
+    <Compile Include="OrderMatchingEngine\IDepthListener.cs" />
+    <Compile Include="OrderMatchingEngine\IOrderBookListener.cs" />
+    <Compile Include="OrderMatchingEngine\IOrderListener.cs" />
+    <Compile Include="OrderMatchingEngine\ITradeListener.cs" />
+    <Compile Include="OrderMatchingEngine\LimitOrderBook.cs" />
+    <Compile Include="OrderMatchingEngine\OrderBookListener.cs" />
+    <Compile Include="OrderMatchingEngine\OrderList.cs" />
+    <Compile Include="OrderMatchingEngine\OrderListener.cs" />
+    <Compile Include="OrderMatchingEngine\TradeListener.cs" />
+    <Compile Include="OrderMatchingEngine\Types.cs" />
+    <Compile Include="OrderAggregate\Order.cs" />
+    <Compile Include="OrderAggregate\OrderFactory.cs" />
+    <Compile Include="OrderAggregate\OrderSide.cs" />
+    <Compile Include="OrderAggregate\OrderStatus.cs" />
+    <Compile Include="OrderAggregate\OrderType.cs" />
+    <Compile Include="OrderAggregate\Price.cs" />
+    <Compile Include="OrderAggregate\Volume.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="OrderAggregate\CancelOrderResponse.cs" />
+    <Compile Include="MarketDataAggregate\MarketData.cs" />
+    <Compile Include="MarketDataAggregate\Ohlc.cs" />
+    <Compile Include="OrderAggregate\OrderId.cs" />
+    <Compile Include="OrderAggregate\TradeRecord.cs" />
+    <Compile Include="Services\IEventStore.cs" />
+    <Compile Include="Services\IOrderIdGenerator.cs" />
+    <Compile Include="Services\Journaler.cs" />
+    <Compile Include="Services\OutputDisruptor.cs" />
+    <Compile Include="TradeAggregate\Trade.cs" />
+    <Compile Include="TradeAggregate\TradeExecutedEvent.cs" />
+    <Compile Include="TradeAggregate\TradeFactory.cs" />
+    <Compile Include="TradeAggregate\TradeId.cs" />
+    <Compile Include="TradeAggregate\TradeList.cs" />
+    <Compile Include="TradeAggregate\TraderId.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CoinExchange.Common\CoinExchange.Common.csproj">
+      <Project>{d61dbd04-95dc-4eb1-ad54-1ff929ac2814}</Project>
+      <Name>CoinExchange.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

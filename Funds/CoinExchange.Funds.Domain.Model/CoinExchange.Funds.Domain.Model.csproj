@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C4F167D-3339-45F1-9A85-71159EF0D806}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinExchange.Funds.Domain.Model</RootNamespace>
+    <AssemblyName>CoinExchange.Funds.Domain.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BalanceAggregate\Balance.cs" />
+    <Compile Include="BalanceAggregate\IBalanceRepository.cs" />
+    <Compile Include="BalanceAggregate\PendingTransactionType.cs" />
+    <Compile Include="BalanceAggregate\PendingTransaction.cs" />
+    <Compile Include="CurrencyAggregate\Currency.cs" />
+    <Compile Include="CurrencyAggregate\CurrencyPair.cs" />
+    <Compile Include="DepositAggregate\AccountDepositLimits.cs" />
+    <Compile Include="DepositAggregate\DepositLimit.cs" />
+    <Compile Include="DepositAggregate\DepositLimitEvaluationService.cs" />
+    <Compile Include="DepositAggregate\LimitsCurrency.cs" />
+    <Compile Include="DepositAggregate\DepositType.cs" />
+    <Compile Include="DepositAggregate\IDepositAddressRepository.cs" />
+    <Compile Include="DepositAggregate\IDepositIdGeneratorService.cs" />
+    <Compile Include="DepositAggregate\IDepositLimitEvaluationService.cs" />
+    <Compile Include="DepositAggregate\IDepositLimitRepository.cs" />
+    <Compile Include="DepositAggregate\IDepositRepository.cs" />
+    <Compile Include="DepositAggregate\TransactionId.cs" />
+    <Compile Include="FeeAggregate\Fee.cs" />
+    <Compile Include="FeeAggregate\IFeeCalculationService.cs" />
+    <Compile Include="FeeAggregate\IFeeRepository.cs" />
+    <Compile Include="LedgerAggregate\ILedgerRepository.cs" />
+    <Compile Include="LedgerAggregate\Ledger.cs" />
+    <Compile Include="LedgerAggregate\LedgerType.cs" />
+    <Compile Include="DepositAggregate\TransactionStatus.cs" />
+    <Compile Include="DepositAggregate\AccountId.cs" />
+    <Compile Include="DepositAggregate\AddressStatus.cs" />
+    <Compile Include="DepositAggregate\BitcoinAddress.cs" />
+    <Compile Include="DepositAggregate\Deposit.cs" />
+    <Compile Include="DepositAggregate\DepositAddress.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IFundsPersistenceRepository.cs" />
+    <Compile Include="Services\IBboCrossContextService.cs" />
+    <Compile Include="Services\ICoinClientService.cs" />
+    <Compile Include="Services\IFundsValidationService.cs" />
+    <Compile Include="Services\ILedgerIdGeneraterService.cs" />
+    <Compile Include="Services\ITierValidationService.cs" />
+    <Compile Include="Services\ITransactionService.cs" />
+    <Compile Include="Services\ITierLevelRetrievalService.cs" />
+    <Compile Include="Services\IClientInteractionService.cs" />
+    <Compile Include="Services\ILimitsConfigurationService.cs" />
+    <Compile Include="Services\TierValidationService.cs" />
+    <Compile Include="WithdrawAggregate\AccountWithdrawLimits.cs" />
+    <Compile Include="WithdrawAggregate\BankAccount.cs" />
+    <Compile Include="WithdrawAggregate\IWithdrawAddressRepository.cs" />
+    <Compile Include="WithdrawAggregate\IWithdrawFeesRepository.cs" />
+    <Compile Include="WithdrawAggregate\IWithdrawIdGeneratorService.cs" />
+    <Compile Include="WithdrawAggregate\IWithdrawLimitEvaluationService.cs" />
+    <Compile Include="WithdrawAggregate\IWithdrawLimitRepository.cs" />
+    <Compile Include="WithdrawAggregate\IWithdrawRepository.cs" />
+    <Compile Include="WithdrawAggregate\Withdraw.cs" />
+    <Compile Include="WithdrawAggregate\WithdrawAddress.cs" />
+    <Compile Include="WithdrawAggregate\WithdrawFees.cs" />
+    <Compile Include="WithdrawAggregate\WithdrawLimit.cs" />
+    <Compile Include="WithdrawAggregate\WithdrawLimitEvaluationService.cs" />
+    <Compile Include="WithdrawAggregate\WithdrawType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\CoinExchange.Common\CoinExchange.Common.csproj">
+      <Project>{d61dbd04-95dc-4eb1-ad54-1ff929ac2814}</Project>
+      <Name>CoinExchange.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FundsDomainModelConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

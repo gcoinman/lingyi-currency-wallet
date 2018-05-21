@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.springframework.net http://www.springframework.net/xsd/spring-objects.xsd">
+
+  <object id="BitcoinClientService" type="CoinExchange.Funds.Infrastructure.Services.CoinClientServices.BitcoinClientService, CoinExchange.Funds.Infrastructure.Services">
+  </object>
+
+  <object id="LitecoinClientService" type="CoinExchange.Funds.Infrastructure.Services.CoinClientServices.LitecoinClientService, CoinExchange.Funds.Infrastructure.Services">
+  </object>
+
+  <object id="DogecoinClientService" type="CoinExchange.Funds.Infrastructure.Services.CoinClientServices.DogecoinClientService, CoinExchange.Funds.Infrastructure.Services">
+  </object>
+
+</objects>

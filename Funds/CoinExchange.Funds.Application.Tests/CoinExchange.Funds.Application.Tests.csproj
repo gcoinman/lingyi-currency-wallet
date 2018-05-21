@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62991061-98B4-4213-8EB2-BC89183BBEFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CoinExchange.Funds.Application.Tests</RootNamespace>
+    <AssemblyName>CoinExchange.Funds.Application.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientInteractionServiceTests.cs" />
+    <Compile Include="FundsValidationServiceTests.cs" />
+    <Compile Include="MockLitecoinClientService.cs" />
+    <Compile Include="MockBalanceRepository.cs" />
+    <Compile Include="MockBboRetrievalService.cs" />
+    <Compile Include="MockBitcoinClientService.cs" />
+    <Compile Include="MockDepositIdGeneratorService.cs" />
+    <Compile Include="MockDepositLimitEvaluationService.cs" />
+    <Compile Include="MockDepositLimitRepository.cs" />
+    <Compile Include="MockDepositRepository.cs" />
+    <Compile Include="MockFeeCalculationService.cs" />
+    <Compile Include="MockFundsRepository.cs" />
+    <Compile Include="MockLedgerGeneratorService.cs" />
+    <Compile Include="MockLedgerRepository.cs" />
+    <Compile Include="MockLimitsConfigurationService.cs" />
+    <Compile Include="MockTierLevelRetrievalService.cs" />
+    <Compile Include="MockWithdrawFeesRepository.cs" />
+    <Compile Include="MockWithdrawIdGeneratorService.cs" />
+    <Compile Include="MockWithdrawLimitEvaluationService.cs" />
+    <Compile Include="MockWithdrawLimitRepository.cs" />
+    <Compile Include="MockWithdrawRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoinExchange.Funds.Application\CoinExchange.Funds.Application.csproj">
+      <Project>{f6edd751-080b-4c4e-8216-2e1ed3ed0a66}</Project>
+      <Name>CoinExchange.Funds.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CoinExchange.Funds.Domain.Model\CoinExchange.Funds.Domain.Model.csproj">
+      <Project>{4c4f167d-3339-45f1-9a85-71159ef0d806}</Project>
+      <Name>CoinExchange.Funds.Domain.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
