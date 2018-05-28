@@ -138,7 +138,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.1\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -164,7 +163,7 @@
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="AuthenticationHandler.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Models\Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,88 +185,107 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Application\CoinExchange.Funds.Application.csproj">
       <Project>{f6edd751-080b-4c4e-8216-2e1ed3ed0a66}</Project>
       <Name>CoinExchange.Funds.Application</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Domain.Model\CoinExchange.Funds.Domain.Model.csproj">
       <Project>{4c4f167d-3339-45f1-9a85-71159ef0d806}</Project>
       <Name>CoinExchange.Funds.Domain.Model</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Infrastructure.Persistence.NHibernate\CoinExchange.Funds.Infrastructure.Persistence.NHibernate.csproj">
       <Project>{4cba757a-c25f-49bf-bd1d-693a98a7c175}</Project>
       <Name>CoinExchange.Funds.Infrastructure.Persistence.NHibernate</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Infrastructure.Services\CoinExchange.Funds.Infrastructure.Services.csproj">
       <Project>{27301eba-3e81-4091-b877-da0be0bae158}</Project>
       <Name>CoinExchange.Funds.Infrastructure.Services</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Funds\CoinExchange.Funds.Port.Adapter.Rest\CoinExchange.Funds.Port.Adapter.Rest.csproj">
       <Project>{d234ea72-f051-461c-b417-1d45e8674881}</Project>
       <Name>CoinExchange.Funds.Port.Adapter.Rest</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Application\CoinExchange.IdentityAccess.Application.csproj">
       <Project>{523daca3-bec6-45e9-90d4-8f6f8a1266d7}</Project>
       <Name>CoinExchange.IdentityAccess.Application</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Domain.Model\CoinExchange.IdentityAccess.Domain.Model.csproj">
       <Project>{cb2cca81-c266-49a4-9fa0-40416ec2318e}</Project>
       <Name>CoinExchange.IdentityAccess.Domain.Model</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure.Persistence\CoinExchange.IdentityAccess.Infrastructure.Persistence.csproj">
       <Project>{41ec439d-9e31-4911-b1a6-e5f0a8c01637}</Project>
       <Name>CoinExchange.IdentityAccess.Infrastructure.Persistence</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure.Services\CoinExchange.IdentityAccess.Infrastructure.Services.csproj">
       <Project>{4921a0e0-8197-4d15-932b-06d667bf9275}</Project>
       <Name>CoinExchange.IdentityAccess.Infrastructure.Services</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Infrastructure\CoinExchange.IdentityAccess.Infrastructure.csproj">
       <Project>{d1f70751-534e-461e-999d-42813ac2cae8}</Project>
       <Name>CoinExchange.IdentityAccess.Infrastructure</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\IdentityAccess\CoinExchange.IdentityAccess.Port.Adapter.Rest\CoinExchange.IdentityAccess.Port.Adapter.Rest.csproj">
       <Project>{54938884-179c-46f9-aba4-2c4ced45b175}</Project>
       <Name>CoinExchange.IdentityAccess.Port.Adapter.Rest</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchance.Trades.ReadModel.Persistence\CoinExchange.Trades.ReadModel.Persistence.csproj">
       <Project>{9fca647f-ed19-4bef-a2ff-093ae27974e9}</Project>
       <Name>CoinExchange.Trades.ReadModel.Persistence</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Application\CoinExchange.Trades.Application.csproj">
       <Project>{4a084ed0-9f5d-4ce9-bb1e-d39b21ad9bcb}</Project>
       <Name>CoinExchange.Trades.Application</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Domain.Model\CoinExchange.Trades.Domain.Model.csproj">
       <Project>{32ac3710-adf8-4522-8f06-1f9c7a45e6e7}</Project>
       <Name>CoinExchange.Trades.Domain.Model</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Infrastructure.Common\CoinExchange.Trades.Infrastructure.Common.csproj">
       <Project>{549e911d-9534-49e3-af19-19d06b697083}</Project>
       <Name>CoinExchange.Trades.Infrastructure.Common</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Infrastructure.Persistence\CoinExchange.Trades.Infrastructure.Persistence.csproj">
       <Project>{1fe04e5f-951e-408f-9172-87b259cbbf94}</Project>
       <Name>CoinExchange.Trades.Infrastructure.Persistence</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Infrastructure.Services\CoinExchange.Trades.Infrastructure.Services.csproj">
       <Project>{2247dd67-1747-430f-b93f-c5538a6dda1e}</Project>
       <Name>CoinExchange.Trades.Infrastructure.Services</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchange.Trades.Port.Adapter.Rest\CoinExchange.Trades.Port.Adapter.Rest.csproj">
       <Project>{58d0962f-9a65-499c-820e-6ef9afa52f61}</Project>
       <Name>CoinExchange.Trades.Port.Adapter.Rest</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\..\Trades\CoinExchange.Trades.ReadModel\CoinExchange.Trades.ReadModel.csproj">
       <Project>{e31a7aa3-da8b-4e3d-8e3b-684555a8dafc}</Project>
       <Name>CoinExchange.Trades.ReadModel</Name>
+      <Private>True</Private>
     </ProjectReference>
     <ProjectReference Include="..\CoinExchange.Common\CoinExchange.Common.csproj">
       <Project>{d61dbd04-95dc-4eb1-ad54-1ff929ac2814}</Project>
       <Name>CoinExchange.Common</Name>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

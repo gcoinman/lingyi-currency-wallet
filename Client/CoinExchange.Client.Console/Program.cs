@@ -45,20 +45,26 @@ namespace CoinExchange.Client.Console
 {
     class Program
     {
+        //static void Main(string[] args)
+        //{
+        //    string baseUrl = "http://rockblanc.cloudapp.net/test/v1";
+        //    baseUrl = "http://localhost:51780/v1";
+        //    //ApiClient client = new ApiClient(baseUrl);
+        //    //System.Console.WriteLine(client.QueryTrades("6e8b5195-0e7f-402f-87e7-80eb92a96c85"));
+        //    //Scenario1(client);
+        //    //ScenarioResults(client);
+        //    //System.Console.WriteLine(client.GetTradeHistory("",""));
+        //    Login(baseUrl);
+        //    //Scenario1(client);
+
+        //    AllBoundedContextsIntegrationTests allBoundedContexts = new AllBoundedContextsIntegrationTests();
+        //    //allBoundedContexts.Initialization();
+        //    System.Console.ReadKey();
+        //}
         static void Main(string[] args)
         {
-            string baseUrl = "http://rockblanc.cloudapp.net/test/v1";
-            baseUrl = "http://localhost:51780/v1";
-            //ApiClient client = new ApiClient(baseUrl);
-            //System.Console.WriteLine(client.QueryTrades("6e8b5195-0e7f-402f-87e7-80eb92a96c85"));
-            //Scenario1(client);
-            //ScenarioResults(client);
-            //System.Console.WriteLine(client.GetTradeHistory("",""));
-            Login(baseUrl);
-            //Scenario1(client);
-
             AllBoundedContextsIntegrationTests allBoundedContexts = new AllBoundedContextsIntegrationTests();
-            //allBoundedContexts.Initialization();
+            allBoundedContexts.Initialization();
             System.Console.ReadKey();
         }
 
@@ -181,7 +187,5 @@ namespace CoinExchange.Client.Console
             //System.Console.WriteLine(control.CreateSecurityKeyPair("#1",rep));
             client.Logout();
         }
-
-        
     }
 }

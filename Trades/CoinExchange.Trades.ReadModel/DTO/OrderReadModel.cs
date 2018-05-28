@@ -88,6 +88,5 @@ namespace CoinExchange.Trades.ReadModel.DTO
             OpenQuantity = openQuantity;
             ClosingDateTime = closingDateTime;
         }
-        
     }
 }

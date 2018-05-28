@@ -103,6 +103,5 @@ namespace CoinExchange.IdentityAccess.Application.SecurityKeysServices.Commands
             }
             return false;
         }
-
     }
 }

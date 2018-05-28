@@ -73,7 +73,7 @@ namespace CoinExchange.Trades.ReadModel.EventHandlers
             _ohlcCalculation = ohlcCalculation;
             _tickerInfoCalculation = tickerInfoCalculation;
             _balanceValidationService = balanceValidationService;
-            TradeEvent.TradeOccured += OnTradeArrived;            
+            TradeEvent.TradeOccured += OnTradeArrived;
         }
 
         /// <summary>

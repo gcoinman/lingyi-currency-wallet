@@ -50,7 +50,8 @@ namespace CoinExchange.IdentityAccess.Application.Tests
 
        public Tuple<bool, string> AuthorizeAccess(int userId, string currentAction, string mfaCode)
        {
-           throw new NotImplementedException();
-       }
+            //throw new NotImplementedException();
+            return new Tuple<bool, string>(true, "");
+        }
     }
 }

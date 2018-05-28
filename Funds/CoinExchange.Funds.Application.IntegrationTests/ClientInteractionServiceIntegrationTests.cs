@@ -309,7 +309,7 @@ namespace CoinExchange.Funds.Application.IntegrationTests
             Assert.AreEqual(withdraw.WithdrawId, receivedWithdraw.WithdrawId);
 
             Assert.IsTrue(depositEventFired);
-            Assert.AreEqual(CurrencyConstants.Btc, receivedCurrency);
+            Assert.AreEqual(CurrencyConstants.Ltc, receivedCurrency);
         }
 
         [Test]

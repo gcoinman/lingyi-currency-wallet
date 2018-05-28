@@ -51,6 +51,7 @@ namespace CoinExchange.Funds.Application.DepositServices.Representations
         public DepositLimitThresholdsRepresentation(string currency, int accountId, decimal dailyLimit, decimal dailyLimitUsed, decimal monthlyLimit, decimal monthlyLimitUsed, decimal currentBalance, decimal maximumDeposit)
         {
             Currency = currency;
+            AccountId = accountId;
             DailyLimit = dailyLimit;
             DailyLimitUsed = dailyLimitUsed;
             MonthlyLimit = monthlyLimit;

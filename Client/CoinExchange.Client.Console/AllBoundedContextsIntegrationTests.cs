@@ -87,7 +87,7 @@ namespace CoinExchange.Client.Console
             //ApplyForTier2();
             //VerifyTier2();
             MakeDeposit();
-            //GetLimits();
+            GetLimits();
             //TradeExecuted();
         }
 
