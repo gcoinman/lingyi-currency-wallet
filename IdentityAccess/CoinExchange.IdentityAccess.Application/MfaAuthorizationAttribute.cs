@@ -72,7 +72,8 @@ namespace CoinExchange.IdentityAccess.Application
         public override void OnActionExecuting(System.Web.Http.Controllers.HttpActionContext actionContext)
         {
             string inputStream = "";
-            using (var reader = new StreamReader(HttpContext.Current.Request.InputStream))
+            using (
+                var reader = new StreamReader(HttpContext.Current.Request.InputStream))
             {
                 inputStream = reader.ReadToEnd();
             }

@@ -32,7 +32,7 @@
 *****************************************************************************/
 
 
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -69,6 +69,44 @@ namespace CoinExchange.Client.Tests
             return HttpPostRequest(jsonObject, url);
         }
 
+        public string GetDepositTierLimits()
+        {
+            JObject jsonObject = new JObject();
+            string url = _baseUrl + "/funds/getDepositTierLimits";
+            return HttpPostRequest(jsonObject, url);
+        }
+
+        public string CreateDepositAddress(string currency, string accoutid = "1", string mfaCode = null)
+        {
+            JObject jsonObject = new JObject();
+            jsonObject.Add("Currency", currency);
+            jsonObject.Add("AccountId", accoutid);
+            jsonObject.Add("MfaCode", mfaCode);
+            string url = _baseUrl + "/funds/createdepositaddress";
+            return HttpPostRequest(jsonObject, url);
+        }
+
+        public string GetDepositAddress(string currency)
+        {
+            JObject jsonObject = new JObject();
+            jsonObject.Add("Currency", currency);
+            string url = _baseUrl + "/funds/getdepositaddresses";
+            return HttpPostRequest(jsonObject, url);
+        }
+
+        public string GetRecentDeposits(string currency)
+        {
+            JObject jsonObject = new JObject();
+            jsonObject.Add("Currency", currency);
+            string url = _baseUrl + "/funds/getrecentdeposits";
+            return HttpPostRequest(jsonObject, url);
+        }
+
+        public string ApiKey { get; set; }
+
+        public string SecretKey { get; set; }
+
+        #region withdraw
         public string GetWithdrawalLimits(string currency)
         {
             JObject jsonObject = new JObject();
@@ -77,8 +115,24 @@ namespace CoinExchange.Client.Tests
             return HttpPostRequest(jsonObject, url);
         }
 
-        public string ApiKey { get; set; }
+        public string AddWithdrawAddress(string currency, string coinaddress, string description)
+        {
+            JObject jsonObject = new JObject();
+            jsonObject.Add("Currency", currency);
+            jsonObject.Add("BitcoinAddress", coinaddress);
+            jsonObject.Add("Description", description);
+            string url = _baseUrl + "/funds/addwithdrawaddress";
+            return HttpPostRequest(jsonObject, url);
+        }
 
-        public string SecretKey { get; set; }
+        public string GetWithdrawAddress(string currency)
+        {
+            JObject jsonObject = new JObject();
+            jsonObject.Add("Currency", currency);
+            string url = _baseUrl + "/funds/getwithdrawaddresses";
+            return HttpPostRequest(jsonObject, url);
+        }
+
+        #endregion
     }
 }

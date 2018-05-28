@@ -32,7 +32,7 @@
 *****************************************************************************/
 
 
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,7 +45,7 @@ namespace CoinExchange.Client.Tests
     /// <summary>
     /// Idenetity access client
     /// </summary>
-    public class IdentityAccessClient:ApiClient
+    public class IdentityAccessClient : ApiClient
     {
         public IdentityAccessClient(string baseUrl) : base(baseUrl)
         {
@@ -64,7 +64,7 @@ namespace CoinExchange.Client.Tests
             return HttpPostRequest(jsonObject, url);
         }
 
-        public string ActivateUser(string username, string password,string activationKey)
+        public string ActivateUser(string username, string password, string activationKey)
         {
             JObject jsonObject = new JObject();
             jsonObject.Add("Username", username);
@@ -97,7 +97,7 @@ namespace CoinExchange.Client.Tests
 
         public string CreateKey(string keyDescription, PermissionRepresentation[] permissions)
         {
-            SecuritykeysPersmission persmission=new SecuritykeysPersmission("","","",false,false,false,keyDescription,permissions);
+            SecuritykeysPersmission persmission = new SecuritykeysPersmission("", "", "", false, false, false, keyDescription, permissions);
             string url = _baseUrl + "/private/user/api/create";
             return HttpPostRequest(persmission, url);
         }
@@ -129,6 +129,17 @@ namespace CoinExchange.Client.Tests
             jsonObject.Add("City", city);
             jsonObject.Add("ZipCode", zipCode);
             string url = _baseUrl + "/private/user/applyfortier2";
+            return HttpPostRequest(jsonObject, url);
+        }
+
+        public string ApplyForTierLevel3(string ssn, string nin, string documentType, string fileName)
+        {
+            JObject jsonObject = new JObject();
+            jsonObject.Add("Ssn", ssn);
+            jsonObject.Add("Nin", nin);
+            jsonObject.Add("DocumentType", documentType);
+            jsonObject.Add("FileName", fileName);
+            string url = _baseUrl + "/private/user/applyfortier3";
             return HttpPostRequest(jsonObject, url);
         }
 
